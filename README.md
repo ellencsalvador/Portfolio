@@ -1,47 +1,30 @@
-# 🌐 Portfólio – Dione Braga Ferreira
+# Portfólio de Projetos - Ellen Salvador
 
-Este projeto é o meu portfólio pessoal, desenvolvido em **HTML, CSS e JavaScript puro**.  
-Aqui apresento minha trajetória, experiências, projetos e formas de contato.  
-O objetivo é servir tanto como **currículo interativo** quanto como **laboratório de aprendizado em frontend**.
+Olá! Este é o repositório do meu portfólio profissional, onde apresento minha jornada e projetos na área de Tecnologia da Informação.
 
-## ✨ Funcionalidades
+## 🚀 Acesse o site!
 
-- **Hero interativo** com efeito de digitação.
-- **Tema claro/escuro** com persistência no `localStorage`.
-- **Scroll reveal** com animações sutis ao rolar a página.
-- **Cards interativos** para os projetos, com hover e destaque.
-- **Foto de perfil recortada em círculo** via `<svg>` + borda estilizada.
-- **Links sociais** (E-mail, Telefone, Site, LinkedIn e Instagram) com ícones do Font Awesome.
-- **Responsividade** para desktop e dispositivos móveis.
+O portfólio está disponível para visualização no link abaixo:
 
-## 🛠️ Tecnologias utilizadas
+**https://ellencsalvador.github.io/Portfolio/**
 
-- **HTML5**
-- **CSS3** (Grid, Flexbox, variáveis CSS)
-- **JavaScript Vanilla**
-- **Font Awesome** (ícones sociais)
-- **Google Drive (embed de imagem)** para armazenar a foto de perfil
+## 🎯 Sobre o Projeto
 
-## 📬 Contato
+Este site foi criado para demonstrar minhas habilidades práticas em desenvolvimento e automação, áreas que estou focando na minha transição de carreira.
 
-✉️ E-mail: dionebraga.work@gmail.com
-💼 LinkedIn: linkedin.com/in/dionebraga
-📸 Instagram: instagram.com/seuusuario
-🌐 Site: Cadastro Cultural
+## 🛠️ Tecnologias e Habilidades
 
+Neste portfólio e nos projetos apresentados, você encontrará exemplos de:
 
-## 📂 Estrutura do projeto
-```bash
-portfolio/
-├── index.html        # Página principal
-├── style.css         # Estilos (pode estar embutido no HTML)
-├── script.js         # Funções JS (pode estar embutido no HTML)
-└── README.md         # Documentação do projeto
+* **Automação de Processos** (n8n)
+* **Qualidade de Software (QA)**
+* **Desenvolvimento de Sistemas**
+* **Gestão e Análise de Dados**
+* HTML / CSS (utilizados neste site)
 
-🚀 Como executar o projeto
+## 💬 Conecte-se Comigo
 
-Clone o repositório:
-git clone https://github.com/seuusuario/portfolio.git
+* **LinkedIn:** [https://www.linkedin.com/in/ellen-salvador/](https://www.linkedin.com/in/ellen-salvador/)
 
 Entre na pasta:
 cd portfolio
