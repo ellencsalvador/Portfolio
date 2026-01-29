@@ -1,283 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <title>Portfólio – Ellen Salvador</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --surface: #111827;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #22d3ee;
-      --accent-2: #a78bfa;
-      --card: #0b1220;
-      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
-    }
+<title>Portfólio – Ellen Salvador</title>
+<style>
+  :root{
+    --bg: #0f172a;
+    --surface: #111827;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --accent: #22d3ee;
+    --accent-2:#a78bfa;
+    --card: #0b1220;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  [data-theme="light"]{
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0ea5e9;
+    --accent-2:#7c3aed;
+    --card: #ffffff;
+    --shadow: 0 10px 30px rgba(2,8,23,.08);
+  }
 
-    [data-theme="light"] {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --accent: #0ea5e9;
-      --accent-2: #7c3aed;
-      --card: #ffffff;
-      --shadow: 0 10px 30px rgba(2, 8, 23, .08);
-    }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.15), transparent 40%),
+                radial-gradient(1000px 800px at 100% 10%, rgba(167,139,250,.12), transparent 45%),
+                var(--bg);
+    color:var(--text);
+    transition: background .3s ease, color .3s ease;
+    scroll-behavior:smooth;
+  }
 
-    * {
-      box-sizing: border-box
-    }
+  /* Navbar */
+  .nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px);
+    background: color-mix(in oklab, var(--bg) 85%, transparent);
+    border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent);}
+  .nav-inner{max-width:1100px; margin:auto; padding:.8rem 1rem;
+    display:flex; align-items:center; justify-content:space-between;}
+  .brand{font-weight:700}
+  .nav a{color:var(--text); text-decoration:none; margin-left:1rem; font-weight:600; opacity:.9}
+  .nav a:hover{opacity:1; color:var(--accent)}
+  .theme-btn{border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
+    background:transparent; color:var(--text);
+    border-radius:999px; padding:.45rem .8rem; cursor:pointer; font-weight:600;}
 
-    body {
-      margin: 0;
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(34, 211, 238, .15), transparent 40%),
-        radial-gradient(1000px 800px at 100% 10%, rgba(167, 139, 250, .12), transparent 45%),
-        var(--bg);
-      color: var(--text);
-      transition: background .3s ease, color .3s ease;
-      scroll-behavior: smooth;
-    }
+  /* Hero */
+  .hero{max-width:1100px; margin: 2rem auto 0; padding: 4rem 1rem 3rem;
+    display:grid; gap:1.5rem; grid-template-columns: 1.2fr .8fr;}
+  .hero h1{font-size: clamp(2rem, 4vw + 1rem, 3.5rem); line-height:1.15; margin:.2rem 0}
+  .chips{display:flex; flex-wrap:wrap; gap:.5rem; margin:.8rem 0 1.2rem}
+  .chip{background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 45%, transparent),
+      color-mix(in oklab, var(--accent-2) 45%, transparent));
+    color:#0b1220; font-weight:700; padding:.35rem .7rem; border-radius:999px; font-size:.85rem;}
+  .cta{display:inline-flex; gap:.6rem; align-items:center;
+    background:linear-gradient(90deg, var(--accent), var(--accent-2));
+    color:#0b1220; text-decoration:none; font-weight:800;
+    padding:.9rem 1.1rem; border-radius:10px; box-shadow: var(--shadow);}
+  .cta:hover{transform:translateY(-2px)}
 
-    /* Navbar */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      background: color-mix(in oklab, var(--bg) 85%, transparent);
-      border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
-    }
+  /* Sections */
+  section{scroll-margin-top:80px}
+  .wrap{max-width:1100px; margin:0 auto; padding: 2rem 1rem 3rem}
+  .section-title{font-size: clamp(1.4rem, 1vw + 1rem, 2rem);
+    margin:1rem 0 2rem; display:flex; align-items:center; gap:.6rem;}
+  .section-title .bar{width: 60px; height:4px; border-radius:999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));}
 
-    .nav-inner {
-      max-width: 1100px;
-      margin: auto;
-      padding: .8rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+  /* Timeline */
+  .timeline{position:relative; padding-left:28px}
+  .timeline:before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px;
+    background: color-mix(in oklab, var(--text) 12%, transparent);}
+  .t-item{position:relative; margin:0 0 18px; padding-left:8px}
+  .t-item:before{content:""; position:absolute; left:-4px; top:.4rem;
+    width:10px; height:10px; border-radius:999px; background: var(--accent);}
+  .t-item h3{margin:0; font-size:1.05rem}
+  .t-item .when{font-size:.9rem; color:var(--muted)}
 
-    .brand {
-      font-weight: 700
-    }
+  /* Cards */
+  .grid{display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))}
+  .card{background:linear-gradient(180deg, color-mix(in oklab, var(--card) 90%, transparent),
+      color-mix(in oklab, var(--card) 98%, transparent));
+    border:1px solid color-mix(in oklab, var(--text) 10%, transparent);
+    border-radius:14px; padding:1.2rem; box-shadow: var(--shadow); transition: transform 0.3s;}
+  .card:hover{transform: translateY(-5px);}
 
-    .nav a {
-      color: var(--text);
-      text-decoration: none;
-      margin-left: 1rem;
-      font-weight: 600;
-      opacity: .9
-    }
+  /* Contact row */
+  .contacts{display:flex; gap:.6rem; flex-wrap:wrap}
+  .pill{display:inline-flex; align-items:center; gap:.5rem;
+    border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
+    padding:.6rem .9rem; border-radius:999px; text-decoration:none; color:var(--text)}
+  .pill:hover{border-color: var(--accent); color: var(--accent)}
 
-    .nav a:hover {
-      opacity: 1;
-      color: var(--accent)
-    }
+  /* Footer */
+  footer{padding:2rem 1rem; text-align:center; color:var(--muted)}
+  @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
 
-    .theme-btn {
-      border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
-      background: transparent;
-      color: var(--text);
-      border-radius: 999px;
-      padding: .45rem .8rem;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    /* Hero */
-    .hero {
-      max-width: 1100px;
-      margin: 2rem auto 0;
-      padding: 4rem 1rem 3rem;
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: 1.2fr .8fr;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
-      line-height: 1.15;
-      margin: .2rem 0
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-      margin: .8rem 0 1.2rem
-    }
-
-    .chip {
-      background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 45%, transparent),
-          color-mix(in oklab, var(--accent-2) 45%, transparent));
-      color: #0b1220;
-      font-weight: 700;
-      padding: .35rem .7rem;
-      border-radius: 999px;
-      font-size: .85rem;
-    }
-
-    .cta {
-      display: inline-flex;
-      gap: .6rem;
-      align-items: center;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: #0b1220;
-      text-decoration: none;
-      font-weight: 800;
-      padding: .9rem 1.1rem;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-    }
-
-    .cta:hover {
-      transform: translateY(-2px)
-    }
-
-    /* Sections */
-    section {
-      scroll-margin-top: 80px
-    }
-
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem
-    }
-
-    .section-title {
-      font-size: clamp(1.4rem, 1vw + 1rem, 2rem);
-      margin: 1rem 0 2rem;
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-    }
-
-    .section-title .bar {
-      width: 60px;
-      height: 4px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    }
-
-    /* Timeline */
-    .timeline {
-      position: relative;
-      padding-left: 28px
-    }
-
-    .timeline:before {
-      content: "";
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: color-mix(in oklab, var(--text) 12%, transparent);
-    }
-
-    .t-item {
-      position: relative;
-      margin: 0 0 18px;
-      padding-left: 8px
-    }
-
-    .t-item:before {
-      content: "";
-      position: absolute;
-      left: -4px;
-      top: .4rem;
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .t-item h3 {
-      margin: 0;
-      font-size: 1.05rem
-    }
-
-    .t-item .when {
-      font-size: .9rem;
-      color: var(--muted)
-    }
-
-    /* Cards */
-    .grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
-    }
-
-    .card {
-      background: linear-gradient(180deg, color-mix(in oklab, var(--card) 90%, transparent),
-          color-mix(in oklab, var(--card) 98%, transparent));
-      border: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
-      border-radius: 14px;
-      padding: 1.2rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Contact row */
-    .contacts {
-      display: flex;
-      gap: .6rem;
-      flex-wrap: wrap
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
-      padding: .6rem .9rem;
-      border-radius: 999px;
-      text-decoration: none;
-      color: var(--text)
-    }
-
-    .pill:hover {
-      border-color: var(--accent);
-      color: var(--accent)
-    }
-
-    /* Footer */
-    footer {
-      padding: 2rem 1rem;
-      text-align: center;
-      color: var(--muted)
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr
-      }
-    }
-
-    .foto-perfil {
-      width: 350px !important;
-      height: 350px !important;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--bg);
-      outline: 5px solid var(--accent);
-    }
-  </style>
+  .foto-perfil {
+    width: 350px !important;
+    height: 350px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--bg);
+    outline: 5px solid var(--accent);
+  }  
+</style>
 </head>
-
 <body>
 
   <div class="nav">
@@ -304,23 +139,19 @@
       </div>
       <h1>Olá, eu sou <span id="typing"></span></h1>
       <p style="max-width:52ch; color:var(--muted); margin: .6rem 0 1.2rem">
-        Transição de Carreira para TI | Foco em Qualidade de Software, Automação de Processos e Soluções com
-        Inteligência Artificial.
+        Transição de Carreira para TI | Foco em Qualidade de Software, Automação de Processos e Soluções com Inteligência Artificial.
       </p>
       <a class="cta" href="#contato">Vamos conversar?</a>
     </div>
     <div class="hero-img">
-      <img src="./ellen.jpeg" alt="Ellen Salvador" class="foto-perfil">
+        <img src="ellen.jpeg" alt="Ellen Salvador" class="foto-perfil">
     </div>
   </section>
 
   <section id="sobre" class="wrap reveal">
     <h2 class="section-title"><span class="bar"></span> Sobre mim</h2>
     <p style="max-width:70ch">
-      Sou de Ilhabela, unificando 15 anos de gestão de processos com novas competências técnicas. Atualmente
-      curso <strong>Ciência de Dados (UNIVESP)</strong> e <strong>ADS (Estácio)</strong>, além de especialização em
-      <strong>Programação com IA (DevClub)</strong>. Sou estagiária de TI na Prefeitura de Ilhabela,
-      atuando com infraestrutura de redes e suporte.
+        Sou de Ilhabela, unificando 15 anos de gestão de processos com novas competências técnicas. Atualmente curso <strong>Ciência de Dados (UNIVESP)</strong> e <strong>ADS (Estácio)</strong>, além de especialização em <strong>Programação com IA (DevClub)</strong>. Sou estagiária de TI na Prefeitura de Ilhabela, atuando com infraestrutura de redes e suporte.
     </p>
   </section>
 
@@ -350,8 +181,7 @@
     <div class="grid">
       <article class="card">
         <h4>Automação QA E-commerce</h4>
-        <p>Scripts em Python/Selenium (POM) para garantir a integridade de fluxos de compra simulados.
-        </p>
+        <p>Scripts em Python/Selenium (POM) para garantir a integridade de fluxos de compra simulados.</p>
       </article>
       <article class="card">
         <h4>Validação de Dados via API</h4>
@@ -359,8 +189,7 @@
       </article>
       <article class="card">
         <h4>Auditoria Web (BDD)</h4>
-        <p>Testes exploratórios e planos de teste em Gherkin com foco em performance e usabilidade.
-        </p>
+        <p>Testes exploratórios e planos de teste em Gherkin com foco em performance e usabilidade.</p>
       </article>
     </div>
   </section>
@@ -371,7 +200,7 @@
       <a class="pill" href="mailto:ellenc_salvador@yahoo.com.br">
         <i class="fa-solid fa-envelope"></i> E-mail
       </a>
-      <a class="pill" href="https://wa.me/5511979918822">
+      <a class="pill" href="https://wa.me/5511979918822" target="_blank">
         <i class="fa-solid fa-phone"></i> WhatsApp
       </a>
       <a class="pill" href="https://github.com/ellencsalvador" target="_blank">
@@ -385,27 +214,28 @@
 
   <footer>© 2026 • Ellen Salvador • De Ilhabela para o mundo Tech</footer>
 
-  <script>
-    const root = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if (saved) root.setAttribute('data-theme', saved);
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      const t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-    });
+<script>
+  // Controle de Tema
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if(saved) root.setAttribute('data-theme', saved);
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', t);
+    localStorage.setItem('theme', t);
+  });
 
-    const typingEl = document.getElementById('typing');
-    const nameText = 'Ellen Salvador';
-    let idx = 0;
-    function type() {
-      if (idx <= nameText.length) {
-        typingEl.textContent = nameText.slice(0, idx++);
-        setTimeout(type, 90);
-      }
+  // Efeito de Digitação
+  const typingEl = document.getElementById('typing');
+  const nameText = 'Ellen Salvador';
+  let idx = 0;
+  function type() {
+    if (idx <= nameText.length){
+      typingEl.textContent = nameText.slice(0, idx++);
+      setTimeout(type, 90);
     }
-    document.addEventListener('DOMContentLoaded', type);
-  </script>
+  }
+  document.addEventListener('DOMContentLoaded', type);
+</script>
 </body>
-
 </html>
