@@ -1,36 +1,14 @@
-# Portfólio de Projetos - Ellen Salvador
+# 🚀 Portfólio de Tecnologia - Ellen Salvador
+Portfólio multidisciplinar focado em **QA, Ciência de Dados e Automação**.
 
-Olá! Este é o repositório do meu portfólio profissional, onde apresento minha jornada e projetos na área de Tecnologia da Informação.
+## 🛠️ Tecnologias e Competências
+- [cite_start]**QA & Testes:** Selenium WebDriver, Python, BDD (Gherkin), Postman. [cite: 12, 31]
+- [cite_start]**Automação & IA:** n8n, Integração de APIs, Engenharia de Prompt. [cite: 13, 38]
+- [cite_start]**Dados:** Atualmente cursando Ciência de Dados (UNIVESP) e ADS (Estácio). [cite: 65, 67]
 
-## 🚀 Acesse o site!
+## 🎯 Projetos Recentes
+- [cite_start]**Automação QA E-commerce:** Scripts Python/Selenium (Padrão POM). [cite: 24, 29, 30]
+- [cite_start]**Fluxos n8n:** Validação de CNPJ via API da Receita Federal. [cite: 39]
 
-O portfólio está disponível para visualização no link abaixo:
-
-**https://ellencsalvador.github.io/Portfolio/**
-
-## 🎯 Sobre o Projeto
-
-Este site foi criado para demonstrar minhas habilidades práticas em desenvolvimento e automação, áreas que estou focando na minha transição de carreira.
-
-## 🛠️ Tecnologias e Habilidades
-
-Neste portfólio e nos projetos apresentados, você encontrará exemplos de:
-
-* **Automação de Processos** (n8n)
-* **Qualidade de Software (QA)**
-* **Desenvolvimento de Sistemas**
-* **Gestão e Análise de Dados**
-* HTML / CSS (utilizados neste site)
-
-## 💬 Conecte-se Comigo
-
-* **LinkedIn:** [https://www.linkedin.com/in/ellen-salvador/](https://www.linkedin.com/in/ellen-salvador/)
-
-Entre na pasta:
-cd portfolio
-
-Abra o arquivo index.html no navegador de sua preferência.
-
-📄 Licença
-Este projeto está sob a licença MIT.
-Sinta-se à vontade para usar como referência.
+---
+*Atualizado em Janeiro de 2026.*
